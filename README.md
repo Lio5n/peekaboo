@@ -41,4 +41,4 @@ Peekaboo is an Obsidian plugin designed to selectively hide and reveal files and
 
 ## Support and Feedback
 
-Encountered an issue or have a suggestion? Please open an issue on the [GitHub repository](https://github.com/your-github-username/peekaboo). 
+Encountered an issue or have a suggestion? Please open an issue on the [GitHub repository](https://github.com/Lio5n/peekaboo).
