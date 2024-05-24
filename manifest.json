@@ -5,6 +5,6 @@
     "minAppVersion": "0.9.12",
     "description": "An Obsidian plugin protects your privacy by setting a password to hide notes.",
     "author": "Wang Guoshi",
-    "authorUrl": "https://github.com/Lio5n/peekaboo.git",
+    "authorUrl": "https://github.com/Lio5n",
     "isDesktopOnly": false
 }
