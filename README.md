@@ -1,25 +1,27 @@
 # Peekaboo: Enhanced Privacy for Your Obsidian Vault
 
-Peekaboo is an Obsidian plugin designed to selectively hide and reveal files and folders within your vault. By setting a password, you can add a layer of privacy, protecting sensitive notes from casual view.
+Peekaboo is an Obsidian plugin designed to selectively hide and reveal files and folders, adding an extra layer of privacy to your vault. Configure hidden items, secure the configuration with a password, and easily toggle visibility with a ribbon icon or command palette commands.
 
-**Important Note:** Peekaboo provides a convenient way to visually conceal notes within your Obsidian workflow. However, it's essential to understand that it does not encrypt your files. Hidden files may still be accessible through Obsidian's search, graph view, or directly from your computer's file system. 
+**Important Note:** Peekaboo provides a convenient way to visually conceal notes within your Obsidian workflow. However, it's essential to understand that it does not encrypt your files. For enhanced security, consider combining Peekaboo with Obsidian's built-in "Excluded Files" feature (`Options > Files and Links > Excluded Files`) to prevent hidden items from appearing in search results, graph view, and other areas.
 
 ## Features
 
-- **Password-Protected Privacy:** Secure your hidden file configuration with a password.
-- **Granular Control:**  Hide individual files, entire folders, or use wildcards for pattern-based hiding.
-- **Quick Toggle Visibility:** Conveniently show or hide configured items using a ribbon icon.
-- **Command Line Efficiency:** Manage visibility directly from your command line.
+- **Password-Protected Configuration:** Secure your hidden file settings with a password.
+- **Granular Visibility Control:**  Hide individual files, entire folders, or use wildcards for pattern-based hiding.
+- **Configured Exception Files:**  Maintain visibility of specific files within hidden directories. (Note: Folder exceptions are not currently supported).
+- **Quick Access Ribbon Icon:**  Discreetly access Peekaboo's functionality from the ribbon. Optionally hide the icon itself within the plugin settings for enhanced privacy.
+- **Intuitive Command Palette Integration:**  Manage visibility with dedicated commands: Toggle Configured Files Visibility, Show Specified File, Show All Configured Files, Hide All Configured Files.
+- **Streamlined Workflow:** The ribbon icon now presents a menu with the above commands, providing quick access to all Peekaboo actions.
 
 ## Installation
 
-1. In Obsidian, navigate to `Settings` -> `Community plugins`.
+1. In Obsidian, go to `Settings` -> `Community plugins`.
 2. Click `Browse` and search for "Peekaboo."
 3. Click `Install` and then `Enable` to activate the plugin.
 
 ## Usage
 
-1. **Set Your Password:** Upon activation, you'll be prompted to set a password to protect your hidden file configuration. 
+1. **Set Your Password:** Upon activation, you'll be prompted to set a password to protect your configuration. 
 2. **Configure Hidden Items:**
    - Access Peekaboo's settings to specify the files and folders you want to hide.
    - List each item on a new line, including the full directory path (e.g., `My Folder/Secret Note.md`).
@@ -33,12 +35,24 @@ Peekaboo is an Obsidian plugin designed to selectively hide and reveal files and
      Folder4/Note2.md
      Folder5/Not*
      ```
-3. **Toggle Visibility:** Use the ribbon icon or command line commands to quickly switch between showing and hiding your configured items.
+3. **Configure Exception Files:**
+   - List files to remain visible even if their parent directory is hidden.
+   - Use the same path format as in the hidden items configuration.
+4. **Manage Visibility:** 
+   - **Ribbon Icon:** Click the Peekaboo icon to access the command menu.
+   - **Command Palette:** Use the "Show Specified File", "Show All Configured Files", or "Hide All Configured Files" commands.
 
 ## Command Line Usage
 
 - **`Toggle Configured Files Visibility`:** Instantly toggle the visibility of all configured files and folders.
+- **`Show Specified File`:**  Reveals a specific file, even if it's within a hidden directory. Only supports individual files, not folders.
+- **`Show All Configured Files`:**  Makes all configured files and folders visible.
+- **`Hide All Configured Files`:**  Hides all configured files and folders.
+
+## Security Tip
+
+For enhanced security, combine Peekaboo with Obsidian's "Excluded Files" feature (`Options > Files and Links > Excluded Files`) to prevent hidden items from appearing in search results, graph view, and other areas within Obsidian.
 
 ## Support and Feedback
 
-Encountered an issue or have a suggestion? Please open an issue on the [GitHub repository](https://github.com/Lio5n/peekaboo).
+Encountered an issue or have a suggestion? Please open an issue on the [GitHub repository](https://github.com/Lio5n/peekaboo). 

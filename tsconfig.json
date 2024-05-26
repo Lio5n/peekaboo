@@ -10,6 +10,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "isolatedModules": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
 	"strictNullChecks": true,
     "lib": [
       "DOM",
@@ -20,5 +22,8 @@
   },
   "include": [
     "**/*.ts"
+  ],
+  "exclude": [
+    "src-history"
   ]
 }
