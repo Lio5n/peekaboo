@@ -34,3 +34,11 @@
 
 - **Improved Ribbon Icon Functionality:**  The ribbon icon now opens a menu with the new commands, providing quick access to all Peekaboo actions. 
 - **Enhanced Dialog Design:**  Enjoy a more visually appealing and user-friendly dialog experience.
+
+
+## [1.2.0] - 2024-05-29
+
+### Improvements:
+
+- Refactored codebase for improved organization and maintainability.
+- Moved all CSS styles to a dedicated styles.css file for better management.
