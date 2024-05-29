@@ -1,10 +1,10 @@
 {
     "id": "peekaboo",
     "name": "Peekaboo",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "minAppVersion": "0.15.0",
     "description": "Protect your privacy by setting a password to hide files.",
     "author": "Wang Guoshi",
-    "authorUrl": "",
+    "authorUrl": "https://github.com/Lio5n",
     "isDesktopOnly": false
 }

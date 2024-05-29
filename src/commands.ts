@@ -5,7 +5,7 @@ import { hideAllConfiguredFiles, promptForFilePath, showAllConfiguredFiles, show
 export function registerCommands(plugin: Peekaboo) {
     plugin.addCommand({
         id: 'toggle-configured-files-visibility',
-        name: 'Toggle Configured Files Visibility',
+        name: 'Toggle configured files visibility',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
             if (plugin.verifyPassword(password)) {
                 await toggleConfiguredFoldersVisibility(plugin);
@@ -21,7 +21,7 @@ export function registerCommands(plugin: Peekaboo) {
 
     plugin.addCommand({
         id: 'show-specified-file',
-        name: 'Show Specified Note',
+        name: 'Show specified note',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
             if (plugin.verifyPassword(password)) {
                 const filePath = await promptForFilePath(plugin);
@@ -45,7 +45,7 @@ export function registerCommands(plugin: Peekaboo) {
 
     plugin.addCommand({
         id: 'show-all-configured-files',
-        name: 'Show All Configured Files',
+        name: 'Show all configured files',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
             if (plugin.verifyPassword(password)) {
                 await showAllConfiguredFiles(plugin);
@@ -61,7 +61,7 @@ export function registerCommands(plugin: Peekaboo) {
 
     plugin.addCommand({
         id: 'hide-all-configured-files',
-        name: 'Hide All Configured Files',
+        name: 'Hide all configured files',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
             if (plugin.verifyPassword(password)) {
                 await hideAllConfiguredFiles(plugin);
@@ -77,7 +77,7 @@ export function registerCommands(plugin: Peekaboo) {
 
     plugin.addCommand({
         id: 'create-folder',
-        name: 'Create Folder',
+        name: 'Create folder',
         callback: () => createFolder(),
     });
 }

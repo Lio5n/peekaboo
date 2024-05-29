@@ -42,3 +42,11 @@
 
 - Refactored codebase for improved organization and maintainability.
 - Moved all CSS styles to a dedicated styles.css file for better management.
+
+
+## [1.2.0] - 2024-05-29
+
+### Changelog:
+
+- Removed the setting to hide the ribbon icon.
+- Updated code to comply with Obsidian plugin API guidelines.

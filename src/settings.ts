@@ -8,7 +8,7 @@ export interface PeekabooSettings {
     passwordHash: string;
     configuredHiddenFolders: string[];
     currentHiddenFolders: string[];
-    hideRibbonIcon: boolean; 
+    // hideRibbonIcon: boolean; 
     configuredExceptionFiles: string[];
     currentExceptionFiles: string[];
 }
@@ -17,7 +17,7 @@ export const DEFAULT_SETTINGS: PeekabooSettings = {
     passwordHash: '',
     configuredHiddenFolders: [],
     currentHiddenFolders: [],
-    hideRibbonIcon: false,
+    // hideRibbonIcon: false,
     configuredExceptionFiles: [],
     currentExceptionFiles: [],
 }
@@ -42,7 +42,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Peekaboo Settings' });
+        containerEl.createEl('h2', { text: 'Hidden File Settings' });
 
         new Setting(containerEl)
             .setName('Password')
@@ -58,10 +58,10 @@ export class PeekabooSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Configured Hidden Files')
+            .setName('Configured hidden files')
             .setDesc('Manage configure hidden folders and notes, one per line.')
             .addButton(button => {
-                button.setButtonText('Manage Hidden Items')
+                button.setButtonText('Manage hidden items')
                     .onClick(() => {
                         if (!this.plugin.settings.passwordHash) {
                             new Notice('Please set a password first.');
@@ -84,10 +84,10 @@ export class PeekabooSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Configured Exception Files')
+            .setName('Configured exception files')
             .setDesc('Manage configured exception notes, one per line. Notes only (folders not supported)')
             .addButton(button => {
-                button.setButtonText('Manage Exception Items')
+                button.setButtonText('Manage exception items')
                     .onClick(() => {
                         if (!this.plugin.settings.passwordHash) {
                             new Notice('Please set a password first.');
@@ -109,8 +109,9 @@ export class PeekabooSettingTab extends PluginSettingTab {
                     });
             });
 
+        /*
         new Setting(containerEl)
-            .setName('Hide Ribbon Icon')
+            .setName('Hide ribbon icon')
             .setDesc('Hide the ribbon icon for this plugin.')
             .addToggle(toggle => {
                 toggle.setValue(this.plugin.settings.hideRibbonIcon)
@@ -120,13 +121,14 @@ export class PeekabooSettingTab extends PluginSettingTab {
                         updateRibbonIcon(this.plugin);
                     });
             });
+        */
 
         new Setting(containerEl)
             .setName('Tips:')
-            .setDesc("1. About 'Configured Exception Files': For example, when you want to show a note within a hidden folder...");
+            .setDesc("1. About 'Configured exception files': For example, when you want to show a note within a hidden folder...");
 
-        containerEl.createEl('div', { cls: 'peekaboo-tips' })
-            .createEl('p', { text: "2. Enhance Security with 'Excluded Files': To prevent hidden files from appearing in Search, Graph View, etc., configure 'Excluded files' under Options > Files and Links > Excluded files." });
+        containerEl.createEl('div')
+            .createEl('p', { text: "2. Enhance security with 'Excluded files': To prevent hidden files from appearing in Search, Graph View, etc., configure 'Excluded files' under Options > Files and Links > Excluded files.", cls: 'peekaboo-tips' });
 
     }
 }

@@ -10,7 +10,7 @@ export class PasswordPromptModal extends Modal {
 
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Enter Password' });
+        contentEl.createEl('h2', { text: 'Enter password' });
 
         const passwordInput = new TextComponent(contentEl);
         passwordInput.inputEl.type = 'password';

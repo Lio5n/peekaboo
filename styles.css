@@ -36,7 +36,9 @@ If your plugin does not need CSS, delete this file.
 }
 
 .peekaboo-tips {
-    margin-top: -15px;
+    margin-top: -12px;
+    font-size: 0.8em;
+    color: rgb(174, 174, 174);
 }
 
 .peekaboo-ribbon-commands-container {
