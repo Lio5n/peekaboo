@@ -44,7 +44,7 @@
 - Moved all CSS styles to a dedicated styles.css file for better management.
 
 
-## [1.2.0] - 2024-05-29
+## [1.2.2] - 2024-05-30
 
 ### Changelog:
 
