@@ -44,9 +44,12 @@
 - Moved all CSS styles to a dedicated styles.css file for better management.
 
 
-## [1.2.2] - 2024-05-30
+## [1.2.1] - 2024-05-30
 
-### Changelog:
+### Removed:
 
 - Removed the setting to hide the ribbon icon.
+
+### Changed:
+
 - Updated code to comply with Obsidian plugin API guidelines.
