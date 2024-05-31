@@ -48,7 +48,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
             .setName('Password')
             .setDesc('Set a password to protect the visibility of your files.')
             .addButton(button => {
-                button.setButtonText('Set Password')
+                button.setButtonText('Set password')
                     .onClick(() => {
                         this.plugin.promptForPassword(async (password) => {
                             this.plugin.settings.passwordHash = hashPassword(password);
