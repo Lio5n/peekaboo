@@ -24,13 +24,11 @@ export default class Peekaboo extends Plugin {
         document.head.appendChild(this.styleEl);
         this.applyHiddenFolders();
 
-        /*
         if (!this.settings.hideRibbonIcon) {
             this.ribbonIconEl = this.addRibbonIcon('eye', 'Peekaboo', () => {
                 new RibbonCommandModal(this.app, this).open();
             });
         }
-        */
         updateRibbonIcon(this);
     }
 

@@ -98,7 +98,6 @@ export class RibbonCommandModal extends Modal {
     }
 }
 
-/*
 export function updateRibbonIcon(plugin: Peekaboo) {
     if (plugin.settings.hideRibbonIcon) {
         if (plugin.ribbonIconEl) {
@@ -121,8 +120,8 @@ export function updateRibbonIcon(plugin: Peekaboo) {
         }
     }
 }
-*/
 
+/*
 export function updateRibbonIcon(plugin: Peekaboo) {
     if (!plugin.ribbonIconEl) {
         plugin.ribbonIconEl = plugin.addRibbonIcon('eye', 'Peekaboo', () => {
@@ -138,3 +137,4 @@ export function updateRibbonIcon(plugin: Peekaboo) {
         setIcon(plugin.ribbonIconEl, 'eye')
     }
 }
+*/

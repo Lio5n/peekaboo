@@ -8,7 +8,7 @@ export interface PeekabooSettings {
     passwordHash: string;
     configuredHiddenFolders: string[];
     currentHiddenFolders: string[];
-    // hideRibbonIcon: boolean; 
+    hideRibbonIcon: boolean; 
     configuredExceptionFiles: string[];
     currentExceptionFiles: string[];
 }
@@ -17,7 +17,7 @@ export const DEFAULT_SETTINGS: PeekabooSettings = {
     passwordHash: '',
     configuredHiddenFolders: [],
     currentHiddenFolders: [],
-    // hideRibbonIcon: false,
+    hideRibbonIcon: false,
     configuredExceptionFiles: [],
     currentExceptionFiles: [],
 }
@@ -109,7 +109,6 @@ export class PeekabooSettingTab extends PluginSettingTab {
                     });
             });
 
-        /*
         new Setting(containerEl)
             .setName('Hide ribbon icon')
             .setDesc('Hide the ribbon icon for this plugin.')
@@ -121,7 +120,6 @@ export class PeekabooSettingTab extends PluginSettingTab {
                         updateRibbonIcon(this.plugin);
                     });
             });
-        */
 
         new Setting(containerEl)
             .setName('Tips:')
