@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0] - 2024-05-24 
+## [1.0.0] - 2024-05-24 
 
 ### Added
 
@@ -19,7 +19,7 @@
 - Hidden items may still be accessible via Obsidian's search, graph view, or the computer's file system. 
 
 
-## [0.2.0] - 2024-05-26
+## [1.1.0] - 2024-05-26
 
 ### Added
 
@@ -36,7 +36,7 @@
 - **Enhanced Dialog Design:**  Enjoy a more visually appealing and user-friendly dialog experience.
 
 
-## [0.2.1] - 2024-05-29
+## [1.2.0] - 2024-05-29
 
 ### Improvements:
 
@@ -44,7 +44,7 @@
 - Moved all CSS styles to a dedicated styles.css file for better management.
 
 
-## [0.2.2] - 2024-05-30
+## [1.2.1] - 2024-05-30
 
 ### Removed:
 
@@ -55,7 +55,7 @@
 - Updated code to comply with Obsidian plugin API guidelines.
 
 
-## [1.0.0] - 2024-06-01
+## [1.2.2] - 2024-06-01
 
 ### Changed:
 
