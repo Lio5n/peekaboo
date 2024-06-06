@@ -109,6 +109,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
                     });
             });
 
+        /*
         new Setting(containerEl)
             .setName('Hide ribbon icon')
             .setDesc('Hide the ribbon icon for this plugin.')
@@ -120,6 +121,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
                         updateRibbonIcon(this.plugin);
                     });
             });
+        */
 
         new Setting(containerEl)
             .setName('Tips:')

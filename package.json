@@ -1,6 +1,6 @@
 {
     "name": "obsidian-peekaboo-plugin",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Protect your privacy by setting a password to hide files.",
     "main": "src/main.ts",
 	"scripts": {

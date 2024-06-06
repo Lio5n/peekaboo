@@ -60,3 +60,10 @@
 ### Changed:
 
 - Restore the ability to hide ribbon icons
+
+
+## [1.2.3] - 2024-06-06
+
+### Removed:
+
+- Removed the setting to hide the ribbon icon.
