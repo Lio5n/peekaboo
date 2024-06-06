@@ -42,7 +42,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Hidden File Settings' });
+        containerEl.createEl('h2', { text: 'Hidden Files' });
 
         new Setting(containerEl)
             .setName('Password')
