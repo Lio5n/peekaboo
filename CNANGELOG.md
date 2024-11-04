@@ -67,3 +67,13 @@
 ### Removed:
 
 - Removed the setting to hide the ribbon icon.
+
+## [1.2.4] - 2024-11-04
+
+### Removed:
+
+- Remove commented-out code
+- Delete the plugin title
+
+### Changed:
+- Use sentence case in the user interface

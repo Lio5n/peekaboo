@@ -98,31 +98,6 @@ export class RibbonCommandModal extends Modal {
     }
 }
 
-/*
-export function updateRibbonIcon(plugin: Peekaboo) {
-    if (plugin.settings.hideRibbonIcon) {
-        if (plugin.ribbonIconEl) {
-            plugin.ribbonIconEl.remove();
-            plugin.ribbonIconEl = null;
-        }
-    } else {
-        if (!plugin.ribbonIconEl) {
-            plugin.ribbonIconEl = plugin.addRibbonIcon('eye', 'Peekaboo', () => {
-                new RibbonCommandModal(plugin.app, plugin).open();
-            });
-        }
-
-        if (plugin.settings.currentHiddenFolders.length > 0) {
-            plugin.ribbonIconEl.setAttribute('aria-label', 'Peekaboo');
-            setIcon(plugin.ribbonIconEl, 'eye-off')
-        } else {
-            plugin.ribbonIconEl.setAttribute('aria-label', 'Peekaboo');
-            setIcon(plugin.ribbonIconEl, 'eye')
-        }
-    }
-}
-*/
-
 export function updateRibbonIcon(plugin: Peekaboo) {
     if (!plugin.ribbonIconEl) {
         plugin.ribbonIconEl = plugin.addRibbonIcon('eye', 'Peekaboo', () => {

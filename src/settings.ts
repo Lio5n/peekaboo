@@ -42,7 +42,6 @@ export class PeekabooSettingTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Hidden Files' });
 
         new Setting(containerEl)
             .setName('Password')
@@ -165,7 +164,7 @@ export class HiddenFoldersModal extends Modal {
 
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Manage Configured Hidden Folders and Files' });
+        contentEl.createEl('h2', { text: 'Manage configured hidden folders and files' });
 
         const textArea = contentEl.createEl('textarea', {
             placeholder: 'Enter folders or files to hide, one per line',
@@ -202,7 +201,7 @@ export class ExceptionFilesModal extends Modal {
 
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Manage Configured Exception Folders and Files' });
+        contentEl.createEl('h2', { text: 'Manage configured exception folders and files' });
 
         const textArea = contentEl.createEl('textarea', {
             placeholder: 'Enter folders or files to exclude, one per line',
