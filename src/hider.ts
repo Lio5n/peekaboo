@@ -103,9 +103,7 @@ export function showSpecifiedFile(plugin: Peekaboo, filePath: string) {
     plugin.applyHiddenFolders();
 }
 
-export async function promptForFilePath(plugin: Peekaboo): Promise<string | null> {
-    return new Promise((resolve) => {
-        const modal = new HideSpecifyFileModal(plugin.app, resolve);
-        modal.open();
-    });
+export async function promptForFilePath(plugin: Peekaboo, callback: (filePath: string | null) => void) {
+    const modal = new HideSpecifyFileModal(plugin.app, callback);
+    modal.open();
 }

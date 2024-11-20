@@ -77,3 +77,9 @@
 
 ### Changed:
 - Use sentence case in the user interface
+
+## [1.3.0] - 2024-11-20
+
+### Fixed:
+
+- Fixed the bug that prevented password verification on mobile devices.

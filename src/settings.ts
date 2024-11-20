@@ -48,9 +48,9 @@ export class PeekabooSettingTab extends PluginSettingTab {
             .setDesc('Set a password to protect the visibility of your files.')
             .addButton(button => {
                 button.setButtonText('Set password')
-                    .onClick(() => {
+                    .onClick(async () => {
                         this.plugin.promptForPassword(async (password) => {
-                            this.plugin.settings.passwordHash = hashPassword(password);
+                            this.plugin.settings.passwordHash = await hashPassword(password);
                             await this.plugin.saveSettings();
                         });
                     });
@@ -70,7 +70,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
 
                         const promptForPassword = async () => {
                             this.plugin.handlePasswordPrompt(async (password) => {
-                                if (this.plugin.verifyPassword(password)) {
+                                if (await this.plugin.verifyPassword(password)) {
                                     new HiddenFoldersModal(this.app, this.plugin).open();
                                 } else {
                                     this.plugin.showIncorrectPasswordDialog(promptForPassword);
@@ -96,7 +96,7 @@ export class PeekabooSettingTab extends PluginSettingTab {
 
                         const promptForPassword = async () => {
                             this.plugin.handlePasswordPrompt(async (password) => {
-                                if (this.plugin.verifyPassword(password)) {
+                                if (await this.plugin.verifyPassword(password)) {
                                     new ExceptionFilesModal(this.app, this.plugin).open();
                                 } else {
                                     this.plugin.showIncorrectPasswordDialog(promptForPassword);
@@ -107,20 +107,6 @@ export class PeekabooSettingTab extends PluginSettingTab {
                         promptForPassword();
                     });
             });
-
-        /*
-        new Setting(containerEl)
-            .setName('Hide ribbon icon')
-            .setDesc('Hide the ribbon icon for this plugin.')
-            .addToggle(toggle => {
-                toggle.setValue(this.plugin.settings.hideRibbonIcon)
-                    .onChange(async (value) => {
-                        this.plugin.settings.hideRibbonIcon = value;
-                        await this.plugin.saveSettings();
-                        updateRibbonIcon(this.plugin);
-                    });
-            });
-        */
 
         new Setting(containerEl)
             .setName('Tips:')

@@ -49,7 +49,7 @@ export default class Peekaboo extends Plugin {
     handlePasswordPrompt(callback: (password: string) => void) {
         const promptForPassword = () => {
             this.promptForPassword(async (password) => {
-                if (this.verifyPassword(password)) {
+                if (await this.verifyPassword(password)) {
                     callback(password);
                 } else {
                     this.showIncorrectPasswordDialog(promptForPassword);
@@ -69,7 +69,7 @@ export default class Peekaboo extends Plugin {
         modal.open();
     }
 
-    verifyPassword(password: string): boolean {
+    async verifyPassword(password: string): Promise<boolean> {
         return verifyPassword(password, this.settings.passwordHash);
     }
 

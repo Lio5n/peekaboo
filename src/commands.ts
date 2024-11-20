@@ -1,58 +1,73 @@
 import { App, Modal, Notice } from "obsidian";
 import Peekaboo from "./main";
 import { hideAllConfiguredFiles, promptForFilePath, showAllConfiguredFiles, showSpecifiedFile, toggleConfiguredFoldersVisibility, updateExceptionFiles } from "./hider";
+import { updateRibbonIcon } from "./ribbon";
 
 export function registerCommands(plugin: Peekaboo) {
     plugin.addCommand({
         id: 'toggle-configured-files-visibility',
-        name: 'Toggle configured files visibility',
-        callback: () => plugin.handlePasswordPrompt(async (password) => {
-            if (plugin.verifyPassword(password)) {
-                await toggleConfiguredFoldersVisibility(plugin);
-            } else {
-                plugin.showIncorrectPasswordDialog(() => plugin.handlePasswordPrompt(async (password) => {
-                    if (plugin.verifyPassword(password)) {
-                        await toggleConfiguredFoldersVisibility(plugin);
-                    }
-                }));
+        name: 'Toggle Configured Files Visibility',
+        callback: () => {
+            if (!plugin.settings.passwordHash) {
+                new Notice('Please set a password first.');
+                return;
             }
-        })
+
+            const promptForPassword = async () => {
+                plugin.handlePasswordPrompt(async (password) => {
+                    if (await plugin.verifyPassword(password)) {
+                        toggleConfiguredFoldersVisibility(plugin);
+                        updateRibbonIcon(plugin);
+                    } else {
+                        plugin.showIncorrectPasswordDialog(promptForPassword);
+                    }
+                });
+            };
+
+            promptForPassword();
+        }
     });
 
     plugin.addCommand({
         id: 'show-specified-file',
-        name: 'Show specified note',
-        callback: () => plugin.handlePasswordPrompt(async (password) => {
-            if (plugin.verifyPassword(password)) {
-                const filePath = await promptForFilePath(plugin);
-                if (filePath) {
-                    showSpecifiedFile(plugin, filePath);
-                    updateExceptionFiles(plugin, filePath);
-                }
-            } else {
-                plugin.showIncorrectPasswordDialog(() => plugin.handlePasswordPrompt(async (password) => {
-                    if (plugin.verifyPassword(password)) {
-                        const filePath = await promptForFilePath(plugin);
-                        if (filePath) {
-                            showSpecifiedFile(plugin, filePath);
-                            updateExceptionFiles(plugin, filePath);
-                        }
-                    }
-                }));
+        name: 'Show Specified File',
+        callback: () => {
+            if (!plugin.settings.passwordHash) {
+                new Notice('Please set a password first.');
+                return;
             }
-        })
+
+            const promptForPassword = async () => {
+                plugin.handlePasswordPrompt(async (password) => {
+                    if (await plugin.verifyPassword(password)) {
+                        promptForFilePath(plugin, (filePath) => {
+                            if (filePath) {
+                                showSpecifiedFile(plugin, filePath);
+                                updateRibbonIcon(plugin);
+                            }
+                        });
+                    } else {
+                        plugin.showIncorrectPasswordDialog(promptForPassword);
+                    }
+                });
+            };
+
+            promptForPassword();
+        }
     });
 
     plugin.addCommand({
         id: 'show-all-configured-files',
         name: 'Show all configured files',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
-            if (plugin.verifyPassword(password)) {
+            if (await plugin.verifyPassword(password)) {
                 await showAllConfiguredFiles(plugin);
+                updateRibbonIcon(plugin);
             } else {
                 plugin.showIncorrectPasswordDialog(() => plugin.handlePasswordPrompt(async (password) => {
-                    if (plugin.verifyPassword(password)) {
+                    if (await plugin.verifyPassword(password)) {
                         await showAllConfiguredFiles(plugin);
+                        updateRibbonIcon(plugin);
                     }
                 }));
             }
@@ -63,12 +78,14 @@ export function registerCommands(plugin: Peekaboo) {
         id: 'hide-all-configured-files',
         name: 'Hide all configured files',
         callback: () => plugin.handlePasswordPrompt(async (password) => {
-            if (plugin.verifyPassword(password)) {
+            if (await plugin.verifyPassword(password)) {
                 await hideAllConfiguredFiles(plugin);
+                updateRibbonIcon(plugin);
             } else {
                 plugin.showIncorrectPasswordDialog(() => plugin.handlePasswordPrompt(async (password) => {
-                    if (plugin.verifyPassword(password)) {
+                    if (await plugin.verifyPassword(password)) {
                         await hideAllConfiguredFiles(plugin);
+                        updateRibbonIcon(plugin);
                     }
                 }));
             }
